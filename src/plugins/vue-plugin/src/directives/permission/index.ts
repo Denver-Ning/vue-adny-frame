@@ -12,6 +12,13 @@ const VPermissionDirective = (app: any) => {
           value.permission,
           value.systemPermission
         )
+      },
+      [hooks.updated](el: HTMLElement, { value }: any) {
+        permission(
+          el,
+          value.permission,
+          value.systemPermission
+        )
       }
     })
 }
