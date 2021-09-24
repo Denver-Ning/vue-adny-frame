@@ -1,8 +1,8 @@
 // 头部执行  尾部执行
 const debounce = (
-  event: keyof HTMLElementEventMap,
+  event: keyof HTMLElementEventMap = 'click',
   el: HTMLElement,
-  delay: number,
+  delay: number = 1000,
   callback: any,
   // 头部执行 尾部执行 默认头部执行
   headExecution = false

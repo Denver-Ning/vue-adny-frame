@@ -1,21 +1,19 @@
 import { getHooks } from '../../compatible/vue/hookKey'
-import { debounce } from './v-debounce'
+import { permission } from './src/v-permission'
 import { App } from 'vue'
-import { DEFAULT_PLUGIN_OPTIONS, IVDrbouncePluginOption } from './options'
-const VDebounceDirective = (app: any) => {
+import { DEFAULT_PLUGIN_OPTIONS } from './src/options'
+const VPermissionDirective = (app: any) => {
     const hooks = getHooks(app)
     const globalOptions = { ...DEFAULT_PLUGIN_OPTIONS }
     app.directive(globalOptions.directive, {
       [hooks.mounted](el: HTMLElement, { value }: any) {
-        debounce(
-          value.event,
+        permission(
           el,
-          value.delay,
-          value.callback,
-          value.headExecution
+          value.permission,
+          value.systemPermission
         )
       }
     })
 }
 
-export default VDebounceDirective
+export default VPermissionDirective
