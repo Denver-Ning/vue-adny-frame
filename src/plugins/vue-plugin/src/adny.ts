@@ -1,23 +1,17 @@
-import { isVue3 } from './utils/isVue3'
-import { log, debugLog, featLog } from './utils/log'
+import { isVue3 } from './compatible/vue/isVue3'
 import { App, Plugin } from 'vue'
-
+import logUtil from './utils/consoleLog/index'
+import formatUtil from './utils/format/index'
 interface Vue2 {
   default: {
     version: string
   }
 }
-const logKeys: any = {
-  log, debugLog, featLog
-}
 
 const Adny = {
   install: function (app: App | Vue2, options: any) {
-    if (isVue3(app)) {
-      Object.keys(logKeys).forEach(item => {
-        app.config.globalProperties[item] = logKeys[item]
-      })
-    }
+    logUtil(app)
+    formatUtil(app)
   }
 } as Plugin & { installed: boolean }
 
