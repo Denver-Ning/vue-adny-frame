@@ -3,6 +3,7 @@ import logUtil from './utils/consoleLog/index'
 import formatUtil from './utils/format/index'
 import VDebounceDirective from './directives/debounce'
 import VPermissionDirective from './directives/permission'
+import VClickOutSideDirective from './directives/clickoutside'
 interface Vue2 {
   default: {
     version: string
@@ -15,6 +16,7 @@ const Adny = {
     formatUtil(app) // 时间格式化工具函数
     VDebounceDirective(app) // 防抖工具函数
     VPermissionDirective(app)
+    VClickOutSideDirective(app)
   }
 } as Plugin & { installed: boolean }
 
