@@ -18,7 +18,7 @@ export default {
       format: "cjs"
     },
     {
-      file: "dist/index.esm.js",
+      file: "dist/index.vite.js",
       format: "es"
     },
     {

@@ -15,8 +15,8 @@ const Adny = {
     logUtil(app) // log工具函数
     formatUtil(app) // 时间格式化工具函数
     VDebounceDirective(app) // 防抖工具函数
-    VPermissionDirective(app)
-    VClickOutSideDirective(app)
+    VPermissionDirective(app) // 权限工具函数
+    VClickOutSideDirective(app) // 点击outside
   }
 } as Plugin & { installed: boolean }
 
