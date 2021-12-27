@@ -5,11 +5,13 @@ const getHooks = (app: App) => {
   return isVue3(app)
     ? {
       mounted: 'mounted',
-      updated: 'updated'
+      updated: 'updated',
+      unMounted: 'unmounted'
     }
     : {
       mounted: 'inserted',
-      updated: 'updated'
+      updated: 'updated',
+      unMounted: 'unbind'
     }
 }
 

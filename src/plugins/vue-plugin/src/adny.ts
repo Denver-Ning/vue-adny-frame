@@ -5,6 +5,8 @@ import deepClone from './utils/deepclone'
 import VDebounceDirective from './directives/debounce'
 import VPermissionDirective from './directives/permission'
 import VClickOutSideDirective from './directives/clickoutside'
+import { VRippleDirective } from './directives/ripple/src/ripple-directive'
+import { VClipBoardDirective } from './directives/clipboard/src/clipboard-directive'
 interface Vue2 {
   default: {
     version: string
@@ -19,6 +21,8 @@ const Adny = {
     VDebounceDirective(app) // 防抖工具函数
     VPermissionDirective(app) // 权限工具函数
     VClickOutSideDirective(app) // 点击outside
+    VRippleDirective(app) // 水波纹
+    VClipBoardDirective(app) // 粘贴板
   }
 } as Plugin & { installed: boolean }
 
